@@ -36,11 +36,11 @@ It's built in PowerShell and runs in a loop, allowing repeated checks until the 
 Enter password to check or type 'exit' to quit
 MyPass123!
 
-Length check passed
-Uppercase letter check passed
-Lowercase letter check passed
-Number check passed
-Special character check passed
+Length check passed  
+Uppercase letter check passed  
+Lowercase letter check passed  
+Number check passed  
+Special character check passed  
 
 Password score: 5 out of 5
 This is a strong password
