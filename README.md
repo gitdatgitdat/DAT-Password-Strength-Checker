@@ -47,5 +47,5 @@ This is a strong password
 
 ## Coming Soon
 
-- Python version
-- GUI wrapper
+- Python version (cross-platform)
+- Optional GUI wrapper
