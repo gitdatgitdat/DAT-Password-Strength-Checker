@@ -19,12 +19,13 @@ It's built in PowerShell and runs in a loop, allowing repeated checks until the 
 ## How to Use
 
 1. Open PowerShell
-2. Run the script
-'''cd path\to\script
-.\PasswordStrengthChecker.ps1'''
-4. Enter a password when prompted.
-5. View the individual check results and overall strength score.
-6. Type exit when you’re done.
+2. Navigate to the script location
+    cd path\to\script
+4. Run the script
+    .\PasswordStrengthChecker.ps1
+6. Enter a password when prompted.
+7. View the individual check results and overall strength score.
+8. Type exit when you’re done.
 
 ##Example Output
 
