@@ -33,7 +33,7 @@ It's built in PowerShell and runs in a loop, allowing repeated checks until the 
 
 ## Example Output
 
-Enter password to check or type 'exit' to quit
+Enter password to check or type 'exit' to quit  
 MyPass123!
 
 Length check passed  
