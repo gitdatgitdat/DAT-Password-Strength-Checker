@@ -42,7 +42,7 @@ Lowercase letter check passed
 Number check passed  
 Special character check passed  
 
-Password score: 5 out of 5
+Password score: 5 out of 5  
 This is a strong password
 
 ## Coming Soon
