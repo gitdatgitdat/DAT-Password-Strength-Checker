@@ -20,14 +20,18 @@ It's built in PowerShell and runs in a loop, allowing repeated checks until the 
 
 1. Open PowerShell
 2. Navigate to the script location
+    ```
     cd path\to\script
+    ```
 4. Run the script
+    ```
     .\PasswordStrengthChecker.ps1
+    ```
 6. Enter a password when prompted.
 7. View the individual check results and overall strength score.
 8. Type exit when you’re done.
 
-##Example Output
+## Example Output
 
 Enter password to check or type 'exit' to quit
 MyPass123!
