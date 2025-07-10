@@ -1,6 +1,11 @@
 #Password Strength Checker
 #v0.1
 
+#Dynamically set script directory
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+#Grabbing txt file for list of commonly used passwords
+$commonPWs = Get-Content -Path (Join-Path $scriptDir "common-passwords.txt")
+
 #Loop for repeat checks
 while ($true) {
     #Header
@@ -13,6 +18,14 @@ while ($true) {
 
     if($password -eq "exit") {
         break
+    }
+
+    #Checking for common passwords before running checks
+    if ($commonPWs -contains $password) {
+        Write-Host "This password is commonly used and considered unsafe."
+        Write-Host "Please try a more unique password."
+        Write-Host ""
+        continue
     }
 
     #Initialize score
