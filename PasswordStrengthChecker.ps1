@@ -20,8 +20,11 @@ while ($true) {
         break
     }
 
+    #Normalization input for common password comparison
+    $normalizedPW = ($password.Trim() -replace '\s', '').ToLower()
+
     #Checking for common passwords before running checks
-    if ($commonPWs -contains $password) {
+    if ($commonPWs -contains $normalizedPW) {
         Write-Host "This password is commonly used and considered unsafe."
         Write-Host "Please try a more unique password."
         Write-Host ""
