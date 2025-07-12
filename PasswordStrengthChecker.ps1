@@ -87,8 +87,30 @@ while ($true) {
         Write-Host "This is a weak password"
     }
 
-    Write-Host ""  # single blank line to separate rounds
+    # Suggestions based on failed checks
+    Write-Host ""
 
+    if ($password.Length -lt 8) {
+        Write-Host "Tip: Make your password at least 8 characters long."
+    }
+
+    if ($password -notmatch "[A-Z]") {
+        Write-Host "Tip: Include at least one uppercase letter."
+    }
+
+    if ($password -notmatch "[a-z]") {
+        Write-Host "Tip: Include at least one lowercase letter."
+    }
+
+    if ($password -notmatch "[0-9]") {
+        Write-Host "Tip: Add at least one number."
+    }
+
+    if ($password -notmatch "[^a-zA-Z0-9]") {
+        Write-Host "Tip: Add at least one special character (e.g., !, @, #)."
+    }
+
+    Write-Host ""  # single blank line to separate rounds
 }
 
 
