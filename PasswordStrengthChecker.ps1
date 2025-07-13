@@ -16,7 +16,7 @@ while ($true) {
     #Prompt for password
     $password = Read-Host "Enter password to check or type 'exit' to quit"
 
-    if($password -eq "exit") {
+    if ($password -eq "exit") {
         break
     }
 
@@ -34,45 +34,19 @@ while ($true) {
     #Initialize score
     $score = 0
 
-    #Length checker
-    if ($password.Length -ge 8) {
-        $score += 1
-        Write-Host "Length check passed"
-    } else {
-        Write-Host "Password is too short (Minimum 8 characters)"
-    }
+    #Store rule results as flags
+    $hasLength = $password.Length -ge 8
+    $hasUpper = $password -cmatch "[A-Z]"
+    $hasLower = $password -cmatch "[a-z]"
+    $hasNumber = $password -match "[0-9]"
+    $hasSpecial = $password -match "[^a-zA-Z0-9]"
 
-    #Uppercase check
-    if ($password -cmatch "[A-Z]") {
-        $score += 1
-        Write-Host "Uppercase letter check passed"
-    } else {
-        Write-Host "No uppercase letters found"
-    }
-
-    #Lowercase check
-    if ($password -cmatch "[a-z]") {
-        $score += 1
-        Write-Host "Lowercase letter check passed"
-    } else {
-        Write-Host "No lowercase letters found"
-    }
-
-    #Number check
-    if ($password -match "[0-9]") {
-        $score += 1
-        Write-Host "Number check passed"
-    } else {
-        Write-Host "No numbers found"
-    }
-
-    #Special character check
-    if ($password -match "[^a-zA-Z0-9]") {
-        $score += 1
-        Write-Host "Special character check passed"
-    } else {
-        Write-Host "No special characters found"
-    }
+    #Rule evaluation based on flags
+    if ($hasLength) { $score += 1; Write-Host "Length check passes" } else { Write-Host "Password is too short (Minimum 8 characters)" }
+    if ($hasUpper) { $score += 1; Write-Host "Uppercase letter check passed" } else { Write-Host "No uppercase letters found" }
+    if ($hasLower) { $score += 1; Write-Host "Lowercase letter check passed" } else { Write-Host "No lowercase letters found" }
+    if ($hasNumber) { $score += 1; Write-Host "Number check passed" } else { Write-Host "No numbers found" }
+    if ($hasSpecial) { $score += 1; Write-Host "Special character check passed" } else { Write-Host "No special characters found" }
 
     Write-Host ""
 
@@ -90,25 +64,11 @@ while ($true) {
     # Suggestions based on failed checks
     Write-Host ""
 
-    if ($password.Length -lt 8) {
-        Write-Host "Tip: Make your password at least 8 characters long."
-    }
-
-    if ($password -notmatch "[A-Z]") {
-        Write-Host "Tip: Include at least one uppercase letter."
-    }
-
-    if ($password -notmatch "[a-z]") {
-        Write-Host "Tip: Include at least one lowercase letter."
-    }
-
-    if ($password -notmatch "[0-9]") {
-        Write-Host "Tip: Add at least one number."
-    }
-
-    if ($password -notmatch "[^a-zA-Z0-9]") {
-        Write-Host "Tip: Add at least one special character (e.g., !, @, #)."
-    }
+    if (-not $hasLength) { Write-Host "Tip: Make your password at least 8 characters long." }
+    if (-not $hasUpper) { Write-Host "Tip: Include at least one uppercase letter." }
+    if (-not $hasLower) { Write-Host "Tip: Include at least one lowercase letter." }
+    if (-not $hasNumber) { Write-Host "Tip: Add at least one number." }
+    if (-not $hasSpecial) { Write-Host "Tip: Add at least one special character (e.g., !, @, #)." }
 
     Write-Host ""  # single blank line to separate rounds
 }
