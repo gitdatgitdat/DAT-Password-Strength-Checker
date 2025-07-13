@@ -37,37 +37,36 @@ It checks for character variety, detects commonly used passwords, and offers tip
 
 ## Requirements
 
-PowerShell 5.0 or higher (Windows, Linux, or macOS)
-common-passwords.txt file in the same directory as the script
+PowerShell 5.0 or higher (Windows, Linux, or macOS)  
+common-passwords.txt file in the same directory as the script  
 
 ---
 
 ## Example Output
 
-==============================
- Password Strength Checker
-==============================
-Enter password to check or type 'exit' to quit: booger
-Password is too short (Minimum 8 characters)
-No uppercase letters found
-Lowercase letter check passed
-No numbers found
-No special characters found
+Password Strength Checker  
 
-Password score: 1 out of 5
-This is a weak password
+Enter password to check or type 'exit' to quit: booger  
+Password is too short (Minimum 8 characters)  
+No uppercase letters found  
+Lowercase letter check passed  
+No numbers found  
+No special characters found  
 
-Tip: Make your password at least 8 characters long.
-Tip: Add at least one number.
-Tip: Add at least one special character (e.g., !, @, #).
+Password score: 1 out of 5  
+This is a weak password  
+
+Tip: Make your password at least 8 characters long.  
+Tip: Add at least one number.  
+Tip: Add at least one special character (e.g., !, @, #).  
 
 ---
 
 ## Roadmap
 
-Python version using zxcvbn or passlib for improved scoring
-GUI wrapper
-Input masking
-Integration with clipboard safety checks
+Python version using zxcvbn or passlib for improved scoring  
+GUI wrapper  
+Input masking  
+Integration with clipboard safety checks  
 
 ---
