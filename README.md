@@ -44,9 +44,8 @@ common-passwords.txt file in the same directory as the script
 
 ## Example Output
 
-==============================
- Password Strength Checker
-==============================
+Password Strength Checker
+
 Enter password to check or type 'exit' to quit: booger
 Password is too short (Minimum 8 characters)
 No uppercase letters found
