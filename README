@@ -1,16 +1,20 @@
-##Password Strength Checker
+## Password Strength Checker
 
 A cross-platform password strength evaluation tool written PowerShell and Python. 
 Each version checks password complexity and provides real-time feedback based on common security practices.
 
-##Contents
+---
+
+## Contents
 
 - `PowerShell/` – PowerShell-based password checker
 - `Python/` – Python-based password checker
 
 Each version includes its own README with setup and usage details.
 
-##Features
+---
+
+## Features
 
 - Evaluates passwords against five core rules:
   - Minimum length (8 characters)
@@ -22,8 +26,12 @@ Each version includes its own README with setup and usage details.
 - Cross-platform support (Windows and Unix-like systems)
 - Optional input masking in Python version
 
-##Roadmap
+---
+
+## Roadmap
 
 - [ ] Python version with external password breach check
 - [ ] Optional GUI
 - [ ] Unit tests and CI integration
+
+---
