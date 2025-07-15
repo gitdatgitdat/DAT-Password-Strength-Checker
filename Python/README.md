@@ -32,9 +32,9 @@ Otherwise the script will default to unmasked input using getpass if pwinput is 
 
 ## Example Output
 
-===============================
+====
  Password Strength Checker 
-===============================
+====
 
 Enter password to check or type exit to quit: ********
 Length check passed
