@@ -3,7 +3,7 @@
 A cross-platform password strength evaluation tool written PowerShell and Python. 
 Each version checks password complexity and provides real-time feedback based on common security practices.
 
---
+---
 
 ## Contents
 
