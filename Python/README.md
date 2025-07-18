@@ -1,16 +1,18 @@
 ## Password Strength Checker (Python)
 
-This Python script checks password strength based on five rules and offers clear, readable console output. It supports optional input masking using the `pwinput` module.
+This Python script checks password strength based on five core rules and verifies whether the password has been exposed in known data breaches using the Have I Been Pwned API. 
+It provides clear, structured console output and offers optional masked input.
 
 ---
 
 ## Features
 
-- Five-rule strength evaluation
-- Masked input (if `pwinput` is installed)
-- Looping password checks
-- Clean, spaced output formatting
-- Compatible with both Python 3.x and most terminal environments
+- Five-rule password strength evaluation (length, upper/lowercase, digit, special character)  
+- Real-time breach check using the HIBP API  
+- Suggestions to improve weak passwords  
+- Optional masked input via pwinput (fallbacks to getpass)  
+- Looping interface for testing multiple passwords  
+- Cross-platform compatibility (Python 3.x)  
 
 ---
 
@@ -19,19 +21,18 @@ This Python script checks password strength based on five rules and offers clear
 1. Open a terminal
 2. Navigate to the Python directory:
     cd path/to/Password-Strength-Checker/Python
-
 3. Run the script:
     python PasswordStrengthChecker.py
 
-If you’d like to see asterisks while typing your password, install:
+Optional: Install pwinput for masked input with asterisks:
 pip install pwinput
-
-Otherwise the script will default to unmasked input using getpass if pwinput is unavailable.
+If not installed, the script defaults to getpass for secure input.
 
 ---
 
 ## Example Output
 
+- Strong password  
 Enter password to check or type exit to quit: ********  
 Length check passed  
 Uppercase letter check passed  
@@ -41,5 +42,17 @@ Special character check passed
 
 Password score: 5 out of 5  
 This is a strong password  
+
+- Tips to improve a weak password
+Password score: 2 out of 5.  
+This is a weak password.  
+
+Suggestions to improve your password:  
+ - Make sure your password is at least 8 characters long.  
+ - Include at least one special character (e.g., !, @, #).  
+
+- If the input appeared in known data breaches.  
+This password has appeared 45,310 known data breaches.  
+It is strongly recommended that you do not use this as a password.  
 
 ---
