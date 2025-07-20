@@ -7,6 +7,11 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from utils import evaluate_pw, pwned_password_check
 
+BG_COLOR = "#2e2e2e"
+FG_COLOR = "#ffffff"
+ENTRY_BG = "#3c3f41"
+BTN_BG = "#4d4d4d"
+
 def check_password():
     password = password_entry.get()
     result_box.delete("1.0", tk.END)
@@ -59,12 +64,13 @@ root = tk.Tk()
 root.title("Password Strength Checker")
 root.geometry("500x400")
 root.resizable(False, False)
+root.configure(bg=BG_COLOR)
 
-frame = tk.Frame(root, padx=10, pady=10)
+frame = tk.Frame(root, padx=10, pady=10, bg=BG_COLOR)
 frame.pack(fill="both", expand=True)
 
-tk.Label(frame, text="Enter Password:").pack(anchor="w")
-password_entry = tk.Entry(frame, show="*", width=40)
+tk.Label(frame, text="Enter Password:", bg=BG_COLOR, fg=FG_COLOR).pack(anchor="w")
+password_entry = tk.Entry(frame, show="*", width=40, bg=ENTRY_BG, fg=FG_COLOR, insertbackground=FG_COLOR)
 password_entry.pack(pady=(0, 10))
 password_entry.focus()
 
@@ -76,12 +82,17 @@ tk.Checkbutton(
     frame,
     text="Show Password",
     variable=show_password_var,
-    command=toggle_password
+    command=toggle_password,
+    bg=BG_COLOR,
+    fg=FG_COLOR,
+    activebackground=BG_COLOR,
+    activeforeground=FG_COLOR,
+    selectcolor=BG_COLOR
 ).pack(anchor="w")
 
-tk.Button(frame, text="Check Password", command=check_password).pack()
+tk.Button(frame, text="Check Password", command=check_password, bg=BTN_BG, fg=FG_COLOR).pack()
 
-result_box = tk.Text(frame, height=15, width=60)
+result_box = tk.Text(frame, height=15, width=60, bg=ENTRY_BG, fg=FG_COLOR, insertbackground=FG_COLOR)
 result_box.pack(pady=(10, 0))
 
 root.bind('<Return>', lambda event: check_password())
