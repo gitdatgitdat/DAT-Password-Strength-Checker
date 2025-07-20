@@ -3,7 +3,7 @@ from tkinter import messagebox
 import os
 import sys
 
-#Ensure path to root directory to access utils.py.
+#Ensure path to root directory to access utils.py
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from utils import evaluate_pw, pwned_password_check
 
@@ -47,6 +47,13 @@ def check_password():
 
     password_entry.delete(0, tk.END)
 
+#Toggle visiblity of password
+def toggle_password():
+    if show_password_var.get():
+        password_entry.config(show="")
+    else: 
+        password_entry.config(show="*")
+
 #GUI
 root = tk.Tk()
 root.title("Password Strength Checker")
@@ -60,6 +67,17 @@ tk.Label(frame, text="Enter Password:").pack(anchor="w")
 password_entry = tk.Entry(frame, show="*", width=40)
 password_entry.pack(pady=(0, 10))
 password_entry.focus()
+
+#Track toggle visiblity checkbox state
+show_password_var = tk.BooleanVar(value=False)
+
+#Password visiblity checkbox
+tk.Checkbutton(
+    frame,
+    text="Show Password",
+    variable=show_password_var,
+    command=toggle_password
+).pack(anchor="w")
 
 tk.Button(frame, text="Check Password", command=check_password).pack()
 
